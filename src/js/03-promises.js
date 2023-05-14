@@ -19,21 +19,21 @@ const refs = {
 
   refs.form.addEventListener('submit', onFormSubmit);
 
-  // function createPromise(position, delay) {
-  //   const shouldResolve = Math.random() > 0.3;
+  function createPromise(position, delay) {
+    const shouldResolve = Math.random() > 0.3;
     
-  //   return new Promise((resolve, reject) => {
-  //     setTimeout(() => {
-  //       if (shouldResolve) {
-  //         // Fulfill
-  //         resolve({ position, delay });
-  //       } else {
-  //         // Reject
-  //         reject({ position, delay });
-  //       }
-  //     }, delay);
-  //   });
-  // }
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (shouldResolve) {
+          // Fulfill
+          resolve({ position, delay });
+        } else {
+          // Reject
+          reject({ position, delay });
+        }
+      }, delay);
+    });
+  }
 
 
     function onFormSubmit(event) {
@@ -62,20 +62,3 @@ if (delay <=0 || step < 0 || amount < 0) {
                 }
               }
 
-
-              function createPromise(position, delay) {
-                const shouldResolve = Math.random() > 0.3;
-                
-                return new Promise((resolve, reject) => {
-                  setTimeout(() => {
-                    if (shouldResolve) {
-                      // Fulfill
-                      resolve({ position, delay });
-                    } else {
-                      // Reject
-                      reject({ position, delay });
-                    }
-                  }, delay);
-                });
-              }
-            
