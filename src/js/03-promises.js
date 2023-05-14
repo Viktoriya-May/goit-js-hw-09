@@ -17,23 +17,23 @@ const refs = {
     amount: document.querySelector('[name="amount"]'),
   }
 
-  refs.form.addEventListener('click', onFormSubmit);
+  refs.form.addEventListener('submit', onFormSubmit);
 
-  function createPromise(position, delay) {
-    const shouldResolve = Math.random() > 0.3;
+  // function createPromise(position, delay) {
+  //   const shouldResolve = Math.random() > 0.3;
     
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (shouldResolve) {
-          // Fulfill
-          resolve({ position, delay });
-        } else {
-          // Reject
-          reject({ position, delay });
-        }
-      }, delay);
-    });
-  }
+  //   return new Promise((resolve, reject) => {
+  //     setTimeout(() => {
+  //       if (shouldResolve) {
+  //         // Fulfill
+  //         resolve({ position, delay });
+  //       } else {
+  //         // Reject
+  //         reject({ position, delay });
+  //       }
+  //     }, delay);
+  //   });
+  // }
 
 
     function onFormSubmit(event) {
@@ -43,6 +43,13 @@ const refs = {
         let step = Number(refs.step.value);
         let amount = Number(refs.amount.value);
 
+if (delay <=0 || step < 0 || amount < 0) {
+  return Notiflix.Report.warning(
+    'Opsss....🧟‍♂️',
+    'The number must be greater than 0',
+    'Try again'
+  );
+}
         for (let i = 1; i <= amount; i += 1) {
               let promiseDelay = delay + step * i;
               createPromise(i, promiseDelay)
@@ -56,3 +63,19 @@ const refs = {
               }
 
 
+              function createPromise(position, delay) {
+                const shouldResolve = Math.random() > 0.3;
+                
+                return new Promise((resolve, reject) => {
+                  setTimeout(() => {
+                    if (shouldResolve) {
+                      // Fulfill
+                      resolve({ position, delay });
+                    } else {
+                      // Reject
+                      reject({ position, delay });
+                    }
+                  }, delay);
+                });
+              }
+            
