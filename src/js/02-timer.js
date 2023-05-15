@@ -14,7 +14,7 @@ const secondsEl = document.querySelector('[data-seconds]');
 
 
 startBtn.setAttribute('disabled', true);
-let chosenDate = null;
+// let chosenDate = null;
 let timerId = null;
 
 
@@ -27,16 +27,18 @@ const options = {
     if (selectedDates[0] < Date.now()) {
         Notify.failure("Please choose a date in the future")
         startBtn.setAttribute('disabled', true);
-        dateInput.style.borderColor = "red";
+        // dateInput.style.borderColor = "red";
+        return;
     } else {
         chosenDate = selectedDates[0];
 
         startBtn.removeAttribute('disabled');
         startBtn.addEventListener('click', timerOn);
-        dateInput.style.borderColor = "#569ff7";
+        // dateInput.style.borderColor = "#569ff7";
     }
   },
 };
+
 
 
 flatpickr('#datetime-picker', options);

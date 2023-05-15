@@ -40,13 +40,13 @@ input#datetime-picker[disabled] {
   animation: none;
 } */
 
-button {
+
+
+button[data-start] {
   box-shadow: 3px 4px 0px 0px #1564ad;
-	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
 	background-color:#79bbff;
 	border-radius:5px;
 	border:1px solid #337bc4;
-	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
@@ -55,12 +55,32 @@ button {
 	padding:12px 44px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #528ecc;
-  
+  margin-left: 50px;
+  margin-right: 50px;
+}
+button[data-stop] {
+  box-shadow: 3px 4px 0px 0px #1564ad;
+	background-color:#79bbff;
+	border-radius:5px;
+	border:1px solid #337bc4;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:12px 44px;
+	text-decoration:none;
+ 
+}
+button[data-start]:is(:hover,:focus){
+  background-color: rgb(14, 98, 131);
 }
 
-button[data-start],
-button[data-stop] {
-  margin-right: 40px;
-  }
+button[data-stop]:is(:hover,:focus){
+    background-color:rgb(14, 98, 131);
+}
 
 
+[data-start] {
+  animation: waves 2s ease-in-out infinite;
+}
