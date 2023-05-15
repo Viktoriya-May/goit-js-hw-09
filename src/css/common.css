@@ -60,9 +60,26 @@ button[data-stop]:is(:hover,:focus){
     background-color:rgb(14, 98, 131);
 }
 
+/* -------------------------------------------2------------------------------------- */
+input#datetime-picker {
+  width: 200px;
+  height: 32px;
+  border: none;
+  background: #afaeaf;
+  box-shadow: 0 6px 8px #c4b59d, 0 -2px 1px #fff;
+  margin: 15px ;
+  text-align: center;
+  color: #f7f2f2;
+  font-weight: 600;
+}
 
-[data-start] {
-  animation: waves 2s ease-in-out infinite;
+input#datetime-picker[disabled] {
+  color: #ab803c;
+}
+
+[disabled] {
+  color: #ab803c;
+  animation: none;
 }
 
 
