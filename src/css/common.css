@@ -73,15 +73,6 @@ input#datetime-picker {
   font-weight: 600;
 }
 
-input#datetime-picker[disabled] {
-  color: #ab803c;
-}
-
-[disabled] {
-  color: #ab803c;
-  animation: none;
-}
-
 
 .form {
   display: flex;
