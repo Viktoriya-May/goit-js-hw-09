@@ -14,7 +14,7 @@ const secondsEl = document.querySelector('[data-seconds]');
 
 
 startBtn.setAttribute('disabled', true);
-// let chosenDate = null;
+let chosenDate = null;
 let timerId = null;
 
 
